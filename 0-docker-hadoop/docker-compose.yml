@@ -1,0 +1,41 @@
+version: '3'
+services:
+  master:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    hostname: master
+    networks:
+      hadoop:
+        ipv4_address: 172.19.0.2
+    ports:
+      - "9000:9000"
+      - "9870:9870"
+      - "8088:8088"
+  worker1:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    hostname: worker1
+    networks:
+      hadoop:
+        ipv4_address: 172.19.0.3
+  worker2:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    hostname: worker2
+    networks:
+      hadoop:
+        ipv4_address: 172.19.0.4
+
+networks:
+  hadoop:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
