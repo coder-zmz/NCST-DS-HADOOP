@@ -91,7 +91,7 @@
 
     ![img](README.assets/BKS6YSY4AAQAO.png)
 
-  - 此时，虚拟机可以Ping通docker，但windows无法ping通docker，需要在windows中添加路由ROUTE add 172.17.0.0 mask 255.255.0.0 192.168.231.135
+  - 此时，虚拟机可以Ping通docker，但windows无法ping通docker，需要在windows中添加路由 `ROUTE add 172.17.0.0 mask 255.255.0.0 192.168.231.135`
 
   - 并关闭虚拟机防火墙，或者设置防火墙允许传入和转发
 
